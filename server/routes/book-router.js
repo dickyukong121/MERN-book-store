@@ -4,6 +4,6 @@ const BookCtrl = require('../controllers/book-ctrl');
 
 const bookRouter = express.Router();
 
-bookRouter.get('/', BookCtrl.getBooks);
+bookRouter.get('/:skipNumber', BookCtrl.getBooks);
 
 module.exports = bookRouter;

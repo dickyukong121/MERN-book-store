@@ -11,8 +11,7 @@ const Order = new Schema(
       category: { type: String, required: true },
       price: { type: Number, required: true }
     }
-  },
-  { timestamps: true }
+  }
 );
 
 module.exports = mongoose.model('orders', Order);

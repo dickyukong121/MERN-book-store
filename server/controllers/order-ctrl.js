@@ -2,6 +2,7 @@ const Order = require('../models/order-model');
 
 saveOrder = async (req, res) => {
   let order = new Order(req.body);
+  console.log(order)
   order
     .save()
     .then(() => {
