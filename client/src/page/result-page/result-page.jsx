@@ -1,3 +1,4 @@
+import { Container } from '@chakra-ui/react';
 import React, { useCallback, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import api from '../../api/api';
@@ -33,7 +34,6 @@ function ResultPage() {
       const cachedResponse = await cacheStorage.match('http://localhost:3000');
       if (cachedResponse) {
         let data = await cachedResponse.json();
-        console.log(data);
         setBook(data);
       }
       caches.delete('Book');
@@ -46,8 +46,10 @@ function ResultPage() {
 
   return (
     <div className="result-page">
-      <ResultComponent book={book} />
-      <ButtonComponent action={handleToBookList} />
+      <Container maxW={'container.lg'} pt={20}>
+        <ResultComponent book={book} />
+        <ButtonComponent action={handleToBookList} />
+      </Container>
     </div>
   );
 }

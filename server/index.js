@@ -32,9 +32,27 @@ mongoose
   })
   .catch(e => console.error('Connection error', e.message));
 
-const connection = mongoose.connection;
-
-connection.once('open', function () {
+mongoose.connection.once('open', function () {
   console.log('MongoDB database connection established successfully');
-  BookCtrl.saveBooks();
+  
+  //create a random booklist
+  const categoryArray = ['Fiction', 'Comics', 'Dictionary'];
+  const booklist = Array.from({ length: 200 }, (v, i) => i).reduce(
+    (previousList, number) => {
+      return [
+        ...previousList,
+        {
+          name: `Book ${number + 1}`,
+          category:
+            categoryArray[
+              Math.floor(Math.random() * categoryArray.length)
+            ],
+          price: Math.floor(Math.random() * 100) + 1
+        }
+      ];
+    },
+    []
+  );
+
+  BookCtrl.saveBooks(booklist);
 });

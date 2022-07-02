@@ -47,7 +47,7 @@ function HomePage() {
 
   return (
     <div className="homepage">
-      <Container maxW={'container.md'} pt={14}>
+      <Container maxW={'container.md'} pt={20}>
         <InfiniteScroll
           dataLength={items.length}
           next={fetchMoreData}

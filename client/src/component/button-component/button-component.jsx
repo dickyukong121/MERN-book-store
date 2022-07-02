@@ -2,7 +2,6 @@ import React from 'react';
 import { Button, Center, Container, Stack } from '@chakra-ui/react';
 
 const ButtonComponent = React.memo(({ action }) => {
-  console.log('button')
   return (
     <Container maxW={'container.sm'} pt={10}>
       <Stack spacing={3}>

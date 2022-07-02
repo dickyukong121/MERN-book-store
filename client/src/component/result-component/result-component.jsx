@@ -1,10 +1,10 @@
 import React from 'react';
-import { Box, Container } from '@chakra-ui/react';
+import { Box, Container, useColorModeValue } from '@chakra-ui/react';
 
 const ResultComponent = ({ book }) => {
   const { name, category, price } = book;
   return (
-    <Container maxW={'container.lg'} pt={14}>
+    <Container maxW={'container.lg'}>
       <Box
         borderWidth="1px"
         borderRadius="lg"
@@ -14,22 +14,39 @@ const ResultComponent = ({ book }) => {
         fontWeight="semibold"
         _groupHover={{ color: 'tomato' }}
       >
-        <Box p="6" fontSize={30}>Congratulation! Your offer is submitted!</Box>
+        <Box p="6" fontSize={30}>
+          Congratulation! Your offer is submitted!
+        </Box>
         <Box p="6">
           {'Book Name'}
-          <Box as="span" color="gray.600" fontSize="sm" ml={1}>
+          <Box
+            as="span"
+            color={useColorModeValue('#aa0707b8', '#13fe8bad')}
+            fontSize="sm"
+            ml={1}
+          >
             {name}
           </Box>
         </Box>
         <Box p="6">
           {'Categroy'}
-          <Box as="span" color="gray.600" fontSize="sm" ml={1}>
+          <Box
+            as="span"
+            color={useColorModeValue('#aa0707b8', '#13fe8bad')}
+            fontSize="sm"
+            ml={1}
+          >
             {category}
           </Box>
         </Box>
         <Box p="6">
           {'Price'}
-          <Box as="span" color="gray.600" fontSize="sm" ml={1}>
+          <Box
+            as="span"
+            color={useColorModeValue('#aa0707b8', '#13fe8bad')}
+            fontSize="sm"
+            ml={1}
+          >
             ${price}
           </Box>
         </Box>
