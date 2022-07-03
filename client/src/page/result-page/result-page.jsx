@@ -1,4 +1,3 @@
-import { Container } from '@chakra-ui/react';
 import React, { useCallback, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import api from '../../api/api';
@@ -46,10 +45,8 @@ function ResultPage() {
 
   return (
     <div className="result-page">
-      <Container maxW={'container.lg'} pt={20}>
-        <ResultComponent book={book} />
-        <ButtonComponent action={handleToBookList} />
-      </Container>
+      <ResultComponent book={book} />
+      <ButtonComponent action={handleToBookList} />
     </div>
   );
 }

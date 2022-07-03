@@ -1,4 +1,3 @@
-import { Container } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
 import api from '../../api/api';
 import FormComponent from '../../component/form-component/form-component';
@@ -41,13 +40,11 @@ function PaymentPage() {
 
   return (
     <div className="payment-page">
-      <Container maxW={'container.lg'} pt={20}>
-        <PaymentComponent book={book} />
-        <FormComponent
-          disableButton={Object.keys(book).length == 0}
-          handlePayment={handlePayment}
-        />
-      </Container>
+      <PaymentComponent book={book} />
+      <FormComponent
+        disableButton={Object.keys(book).length == 0}
+        handlePayment={handlePayment}
+      />
     </div>
   );
 }

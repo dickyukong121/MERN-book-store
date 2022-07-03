@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import api from '../../api/api';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import { Center, Container } from '@chakra-ui/react';
+import { Center } from '@chakra-ui/react';
 import BookComponent from '../../component/book-component/book-component';
 import { useNavigate } from 'react-router-dom';
 
@@ -47,7 +47,6 @@ function HomePage() {
 
   return (
     <div className="homepage">
-      <Container maxW={'container.md'} pt={20}>
         <InfiniteScroll
           dataLength={items.length}
           next={fetchMoreData}
@@ -59,7 +58,6 @@ function HomePage() {
             <BookComponent key={index} item={item} clickBook={clickBook} />
           ))}
         </InfiniteScroll>
-      </Container>
     </div>
   );
 }

@@ -1,3 +1,4 @@
+import { Container } from '@chakra-ui/react';
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
@@ -10,11 +11,13 @@ function App() {
   return (
     <div>
       <Navbar />
-      <Routes>
-        <Route exact path="/" element={<HomePage />} />
-        <Route path="/payment" element={<PaymentPage />} />
-        <Route path="/result" element={<ResultPage />} />
-      </Routes>
+      <Container maxW={'container.md'} pt={20}>
+        <Routes>
+          <Route exact path="/" element={<HomePage />} />
+          <Route path="/payment" element={<PaymentPage />} />
+          <Route path="/result" element={<ResultPage />} />
+        </Routes>
+      </Container>
     </div>
   );
 }

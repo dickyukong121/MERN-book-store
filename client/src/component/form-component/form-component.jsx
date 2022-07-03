@@ -1,6 +1,6 @@
 import React from 'react';
 import { useFormik } from 'formik';
-import { Box, Button, Center, Container, Input, Stack } from '@chakra-ui/react';
+import { Box, Button, Center, Input, Stack } from '@chakra-ui/react';
 
 /* eslint-disable no-useless-escape */
 
@@ -40,50 +40,48 @@ const FormComponent = React.memo(({ disableButton, handlePayment }) => {
 
   return (
     <form onSubmit={formik.handleSubmit}>
-      <Container maxW={'container.sm'} pt={10}>
-        <Stack spacing={3}>
-          <Input
-            variant="outline"
-            placeholder="Customer Name"
-            id="customerName"
-            name="customerName"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.customerName}
-          />
-          {showCustomerNameError ? (
-            <Box color={'red'}>{formik.errors.customerName}</Box>
-          ) : (
-            <Box minH={'24px'}></Box>
-          )}
-          <Input
-            variant="outline"
-            placeholder="Phone"
-            id="phone"
-            name="phone"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.phone}
-          />
-          {showPhoneError ? (
-            <Box color={'red'}>{formik.errors.phone}</Box>
-          ) : (
-            <Box minH={'24px'}></Box>
-          )}
-          <Center pt={10}>
-            <Button
-              background={'#5433FF'}
-              _hover={{ background: '#4379FF' }}
-              color={'white'}
-              type="submit"
-              width={200}
-              disabled={disableButton}
-            >
-              Pay
-            </Button>
-          </Center>
-        </Stack>
-      </Container>
+      <Stack spacing={3} mt={10}>
+        <Input
+          variant="outline"
+          placeholder="Customer Name"
+          id="customerName"
+          name="customerName"
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.customerName}
+        />
+        {showCustomerNameError ? (
+          <Box color={'red'}>{formik.errors.customerName}</Box>
+        ) : (
+          <Box minH={'24px'}></Box>
+        )}
+        <Input
+          variant="outline"
+          placeholder="Phone"
+          id="phone"
+          name="phone"
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.phone}
+        />
+        {showPhoneError ? (
+          <Box color={'red'}>{formik.errors.phone}</Box>
+        ) : (
+          <Box minH={'24px'}></Box>
+        )}
+        <Center pt={10}>
+          <Button
+            background={'#5433FF'}
+            _hover={{ background: '#4379FF' }}
+            color={'white'}
+            type="submit"
+            width={200}
+            disabled={disableButton}
+          >
+            Pay
+          </Button>
+        </Center>
+      </Stack>
     </form>
   );
 });
