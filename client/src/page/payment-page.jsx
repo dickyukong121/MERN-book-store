@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import api from '../../api/api';
-import FormComponent from '../../component/form-component/form-component';
-import PaymentComponent from '../../component/payment-component/payment-component';
+import api from '../api/api';
+import Payment from '../component/payment';
+import Form from '../component/form';
 
 function PaymentPage() {
   const [book, setBook] = useState({});
@@ -24,7 +24,8 @@ function PaymentPage() {
       book: {
         name: book.name,
         category: book.category,
-        price: book.price
+        price: book.price,
+        id: book._id
       },
       customerName: data.customerName,
       phone: data.phone
@@ -40,8 +41,8 @@ function PaymentPage() {
 
   return (
     <div className="payment-page">
-      <PaymentComponent book={book} />
-      <FormComponent
+      <Payment book={book} />
+      <Form
         disableButton={Object.keys(book).length == 0}
         handlePayment={handlePayment}
       />

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Badge } from '@chakra-ui/react';
 
-const BookComponent = ({ item, clickBook }) => {
+const Book = ({ item, clickBook }) => {
   const { name, category, price } = item;
   return (
     <Box
@@ -28,4 +28,4 @@ const BookComponent = ({ item, clickBook }) => {
     </Box>
   );
 };
-export default React.memo(BookComponent);
+export default React.memo(Book);

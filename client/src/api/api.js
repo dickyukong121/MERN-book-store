@@ -1,15 +1,16 @@
 import axios from 'axios';
+import {REACT_APP_SERVER_URL} from '../base';
 
 const bookAPI = axios.create({
-  baseURL: 'http://localhost:4000/books'
+  baseURL: `${REACT_APP_SERVER_URL}/books`
 });
 
 const orderAPI = axios.create({
-  baseURL: 'http://localhost:4000/order'
+  baseURL: `${REACT_APP_SERVER_URL}/order`
 });
 
 const checkoutAPI = axios.create({
-  baseURL: 'http://localhost:4000/checkout'
+  baseURL: `${REACT_APP_SERVER_URL}/checkout`
 });
 
 const getBooks = skipNumber => bookAPI.get(`/${skipNumber}`);

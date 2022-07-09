@@ -21,7 +21,7 @@ const validate = values => {
   return errors;
 };
 
-const FormComponent = React.memo(({ disableButton, handlePayment }) => {
+const Form = React.memo(({ disableButton, handlePayment }) => {
   const formik = useFormik({
     initialValues: {
       customerName: '',
@@ -86,4 +86,4 @@ const FormComponent = React.memo(({ disableButton, handlePayment }) => {
   );
 });
 
-export default FormComponent;
+export default Form;

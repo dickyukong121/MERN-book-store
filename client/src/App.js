@@ -2,11 +2,10 @@ import { Container } from '@chakra-ui/react';
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import Navbar from './component/navbar-component/navbar-component';
-import HomePage from './page/home-page/home-page';
-import PaymentPage from './page/payment-page/payment-page';
-import ResultPage from './page/result-page/result-page';
-
+import Navbar from './component/navbar'
+import HomePage from './page/home-page';
+import PaymentPage from './page/payment-page';
+import ResultPage from './page/result-page';
 function App() {
   return (
     <div>
@@ -21,5 +20,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

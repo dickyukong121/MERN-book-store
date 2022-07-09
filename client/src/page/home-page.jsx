@@ -1,9 +1,9 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import api from '../../api/api';
+import api from '../api/api';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { Center } from '@chakra-ui/react';
-import BookComponent from '../../component/book-component/book-component';
 import { useNavigate } from 'react-router-dom';
+import Book from '../component/book';
 
 function HomePage() {
   const navigate = useNavigate();
@@ -11,6 +11,7 @@ function HomePage() {
   const [items, setItems] = useState([]);
   const [hasMore, setHasMore] = useState(true);
   const [skipNumber, setSkipNumber] = useState(0);
+
 
   useEffect(() => {
     caches.delete('Book');
@@ -55,7 +56,7 @@ function HomePage() {
           endMessage={<Center h="100px">All books are shown.</Center>}
         >
           {items.map((item, index) => (
-            <BookComponent key={index} item={item} clickBook={clickBook} />
+            <Book key={index} item={item} clickBook={clickBook} />
           ))}
         </InfiniteScroll>
     </div>

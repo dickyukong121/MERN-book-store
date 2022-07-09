@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, useColorModeValue } from '@chakra-ui/react';
 
-const ResultComponent = ({ book }) => {
+const Payment = ({ book }) => {
   const { name, category, price } = book;
   return (
     <Box
@@ -14,7 +14,7 @@ const ResultComponent = ({ book }) => {
       _groupHover={{ color: 'tomato' }}
     >
       <Box p="6" fontSize={30}>
-        Congratulation! Your offer is submitted!
+        You have selected:
       </Box>
       <Box p="6">
         {'Book Name'}
@@ -46,10 +46,10 @@ const ResultComponent = ({ book }) => {
           fontSize="sm"
           ml={1}
         >
-          ${price}
+          {price && `$${price}`}
         </Box>
       </Box>
     </Box>
   );
 };
-export default ResultComponent;
+export default Payment;

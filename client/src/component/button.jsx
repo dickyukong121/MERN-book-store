@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Center, Stack } from '@chakra-ui/react';
 
-const ButtonComponent = React.memo(({ action }) => {
+const ButtonStack = React.memo(({ action }) => {
   return (
     <Stack spacing={3}>
       <Center pt={10}>
@@ -19,4 +19,4 @@ const ButtonComponent = React.memo(({ action }) => {
   );
 });
 
-export default ButtonComponent;
+export default ButtonStack;
